@@ -5,7 +5,9 @@
 
 int main() {
 
+    game Game;
 
+    Game.print_board();
 
     return 0;
 };

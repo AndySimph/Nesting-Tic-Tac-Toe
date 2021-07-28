@@ -1,17 +1,23 @@
-//Helper file for the game class
+//Header file for the game class
 
 //Libraries
+#include <iostream>
+#include <vector>
 
 //Game class
-class Game {
+class game {
+
     public:
         //Constructor and Destructor
         game();
         ~game();
 
+        //Function to print the board;
+        void print_board();
 
-        int _board[];
+        //Variables
+        char _board[9];
 
     private:
 
-}
+};
