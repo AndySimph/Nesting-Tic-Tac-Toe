@@ -1,7 +1,7 @@
 //Programmer: Andy Simphaly
 
 //Libraries
-//#include "game.h"
+#include "game.h"
 
 int main() {
 

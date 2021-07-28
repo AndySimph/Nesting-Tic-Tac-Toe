@@ -5,6 +5,12 @@
 //Game class
 class Game {
     public:
+        //Constructor and Destructor
+        game();
+        ~game();
+
+
+        int _board[];
 
     private:
 

@@ -2,3 +2,13 @@
 
 //Libraries
 #include "game.h"
+
+//Constructor
+game::game() {
+
+};
+        
+//Destructor      
+game::~game() {
+
+};
