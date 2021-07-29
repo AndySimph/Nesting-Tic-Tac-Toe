@@ -4,6 +4,10 @@
 #include <iostream>
 #include <vector>
 
+#include "player.h"
+
+#pragma once
+
 //Game class
 class game {
 
