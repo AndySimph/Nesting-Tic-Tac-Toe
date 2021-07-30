@@ -11,7 +11,7 @@ game::game() {
         _board[i] = ' ';
     }
 
-    _player1.color = 'b';
+    _player1._color = 'b';
 
 };
         
@@ -52,7 +52,7 @@ void game::print_board() {
     }
     std::cout << std::endl;
 
-    std::cout << _player1.color << std::endl;
+    // std::cout << _player1._color << std::endl;
 
     return;
 };

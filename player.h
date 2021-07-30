@@ -4,8 +4,6 @@
 #include <iostream>
 #include <vector>
 
-#include "entity.h"
-
 #pragma once
 
 //Player class
@@ -21,7 +19,7 @@ class player {
         //Vector of pairs to check
         std::vector<std::pair<int, bool> > _value;
 
-        char color;
+        char _color;
 
     private:
 

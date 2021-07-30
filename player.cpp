@@ -34,5 +34,7 @@ void player::print_val() {
     std::cout << std::endl;
     }
 
+    std::cout << _color << std::endl;
+
     return;
 };
