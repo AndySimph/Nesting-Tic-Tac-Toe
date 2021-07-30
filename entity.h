@@ -1,27 +1,25 @@
-//Header file for the player class
+//Header file for the entity class
 
 //Libraries
 #include <iostream>
 #include <vector>
 
-#include "entity.h"
-
 #pragma once
 
 //Player class
-class player {
+class entity {
 
     public:
         //Constructor and Destructor
-        player();
-        ~player();
+        entity();
+        ~entity();
 
         void print_val();
 
         //Vector of pairs to check
-        std::vector<std::pair<int, bool> > _value;
+        //std::vector<std::pair<int, bool> > _value;
 
-        char color;
+        //char color;
 
     private:
 
