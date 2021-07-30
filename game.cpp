@@ -11,7 +11,9 @@ game::game() {
         _board[i] = ' ';
     }
 
-    _player1._color = 'b';
+    //Initialize the player color
+    _player1._color = 'w';
+    _player2._color = 'b';
 
 };
         
@@ -22,6 +24,9 @@ game::~game() {
 
 //Funtion to print the board
 void game::print_board() {
+
+    //Print player1 available pieces
+    _player1.print_val();
 
     //Print a bar
     for (int j = 0; j < 13; j++) {
@@ -52,7 +57,8 @@ void game::print_board() {
     }
     std::cout << std::endl;
 
-    // std::cout << _player1._color << std::endl;
+    //Print player2 available pieces
+    _player2.print_val();
 
     return;
 };

@@ -23,6 +23,7 @@ class game {
         char _board[9];
 
         player _player1;
+        player _player2;
 
     private:
 

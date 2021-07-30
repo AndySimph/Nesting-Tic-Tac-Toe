@@ -17,7 +17,7 @@ class player {
         void print_val();
 
         //Vector of pairs to check
-        std::vector<std::pair<int, bool> > _value;
+        std::vector<std::pair<int, bool> > _piece;
 
         char _color;
 

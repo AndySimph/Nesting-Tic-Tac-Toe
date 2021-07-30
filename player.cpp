@@ -6,12 +6,13 @@
 //Constructor
 player::player() {
 
+    //Initialize the pieces
     int j = 0;
     for (int i = 0; i < 6; i++) {
         if ((i % 2) == 0) {
             j++;
         }
-        _value.push_back( std::make_pair(j, false) );
+        _piece.push_back( std::make_pair(j, false) );
     }
 
 };
@@ -23,18 +24,16 @@ player::~player() {
 
 void player::print_val() {
 
-    //Print each 
-    for(int i = 0; i < _value.size(); i++) {
-        std::cout << _value[i].first << " ";
-    if (_value[i].second == false) {
-        std::cout << "false";
-    } else {
-        std::cout << "true";
+    //Print team
+    std::cout << _color << ": ";
+
+    //Print each available piece
+    for(int i = 0; i < _piece.size(); i++) {
+        if (_piece[i].second == false) {
+            std::cout << _piece[i].first << "  ";
+        } 
     }
     std::cout << std::endl;
-    }
-
-    std::cout << _color << std::endl;
 
     return;
 };
