@@ -6,9 +6,12 @@
 //Constructor
 game::game() {
 
+    //Initialize the board
     for (int i = 0; i <= 8; i++) {
         _board[i] = ' ';
     }
+
+    _player1.color = 'b';
 
 };
         
@@ -20,10 +23,15 @@ game::~game() {
 //Funtion to print the board
 void game::print_board() {
 
+    //Print a bar
+    for (int j = 0; j < 13; j++) {
+        std::cout << "-";
+    }
+    std::cout << std::endl << "| ";
+
     //Loop through each element of the board
     for (int i = 0; i <= 8; i++) {
         //Print bars and the element
-        std::cout << "| ";
         std::cout << _board[i];
 
         //Check if it is the element position is a multiple of 3
@@ -31,15 +39,20 @@ void game::print_board() {
             std::cout << " | " << std::endl;
             
             //Print a bar dividing each horizontal line
-            for (int j = 0; j < 18; j++) {
+            for (int j = 0; j < 13; j++) {
                 std::cout << "-";
             }
-            std::cout << std::endl;
+            if (i != 8) {
+                std::cout << std::endl << "| ";
+            }
 
         } else {
             std::cout << " | ";
         }
     }
+    std::cout << std::endl;
+
+    std::cout << _player1.color << std::endl;
 
     return;
 };

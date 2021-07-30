@@ -9,5 +9,7 @@ int main() {
 
     Game.print_board();
 
+    Game._player1.print_val();
+
     return 0;
 };

@@ -22,6 +22,8 @@ class game {
         //Variables
         char _board[9];
 
+        player _player1;
+
     private:
 
 };

@@ -14,6 +14,13 @@ class player {
         player();
         ~player();
 
+        void print_val();
+
+        //Vector of pairs to check
+        std::vector<std::pair<int, bool> > _value;
+
+        char color;
+
     private:
 
-}
+};
