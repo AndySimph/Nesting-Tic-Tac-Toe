@@ -3,9 +3,17 @@
 //Libraries
 #include "game.h"
 
-void game_loop(game Game) {
+void game_loop(game Game, int &turn) {
+
+    // if ((turn % 2) == 1) {
+    //     //player1 turn
+    // }
+
+
 
     Game.print_board();
+
+    turn++;
 
     return;
 };
@@ -15,17 +23,15 @@ int main() {
     //Variables
     game Game;
     bool play = true;
-    int i = 0;
+    int turn = 1;
 
     //Loop while play is true
     while(play) {
 
         //Call the game loop
-        game_loop(Game);
+        game_loop(Game, turn);
 
-        i++;
-
-        if (i == 3) {
+        if (turn == 4) {
             play = false;
         }
 
