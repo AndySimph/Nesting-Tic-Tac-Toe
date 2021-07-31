@@ -59,6 +59,7 @@ void game::print_board() {
 
     //Print player2 available pieces
     _player2.print_val();
+    std::cout << std::endl;
 
     return;
 };
