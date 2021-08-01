@@ -30,7 +30,13 @@ void player::print_val() {
     //Print each available piece
     for(int i = 0; i < _piece.size(); i++) {
         if (_piece[i].second == false) {
-            std::cout << _piece[i].first << "  ";
+            std::cout << _piece[i].first;
+            if ((i%2) == 0) {
+                std::cout << "a";
+            } else {
+                std::cout << "b";
+            }
+            std::cout << "  ";
         } 
     }
     std::cout << std::endl;

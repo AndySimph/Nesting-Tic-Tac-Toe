@@ -6,9 +6,14 @@
 //Constructor
 game::game() {
 
+    char temp_char;
+
     //Initialize the board
     for (int i = 0; i <= 8; i++) {
-        _board[i] = ' ';
+
+        temp_char = '0' + i;
+
+        _board[i] = temp_char;
     }
 
     //Initialize the player color
