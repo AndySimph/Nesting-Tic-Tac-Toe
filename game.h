@@ -18,7 +18,7 @@ class game {
 
         //Functions
         void player_move();
-        void print_board();
+        void print_board(); 
 
         //Variables
         char _board[9];     //For board
