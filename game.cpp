@@ -27,6 +27,13 @@ game::~game() {
 
 };
 
+//Function for a player move
+void game::player_move() {
+
+
+    return;
+}
+
 //Funtion to print the board
 void game::print_board() {
 

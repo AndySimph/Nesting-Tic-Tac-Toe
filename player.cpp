@@ -31,6 +31,8 @@ void player::print_val() {
     for(int i = 0; i < _piece.size(); i++) {
         if (_piece[i].second == false) {
             std::cout << _piece[i].first;
+
+            //Give uniqueness between each piece of the same size
             if ((i%2) == 0) {
                 std::cout << "a";
             } else {
