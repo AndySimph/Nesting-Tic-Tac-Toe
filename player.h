@@ -19,6 +19,7 @@ class player {
         //Vector of pairs to check
         std::vector<std::pair<int, bool> > _piece;
 
+        //Variables
         char _color;
 
     private:

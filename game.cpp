@@ -28,8 +28,9 @@ game::~game() {
 };
 
 //Function for a player move
-void game::player_move() {
+void game::player_move(char player) {
 
+    std::cout << player << std::endl;
 
     return;
 }

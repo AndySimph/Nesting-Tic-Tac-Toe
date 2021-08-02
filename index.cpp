@@ -5,14 +5,21 @@
 
 void game_loop(game Game, int &turn) {
 
-    // if ((turn % 2) == 1) {
-    //     //player1 turn
-    // }
-
-
-
+    //Print the board
     Game.print_board();
 
+    //Do player move
+    if ((turn % 2) == 1) {
+        //player1 turn
+        Game.player_move(Game._player1._color);
+
+    } else {
+        //player2 turn
+        Game.player_move(Game._player2._color);
+
+    }
+
+    //Increment turn
     turn++;
 
     return;

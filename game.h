@@ -17,7 +17,7 @@ class game {
         ~game();
 
         //Functions
-        void player_move();
+        void player_move(char player);
         void print_board(); 
 
         //Variables
