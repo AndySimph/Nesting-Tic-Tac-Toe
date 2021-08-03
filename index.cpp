@@ -3,6 +3,7 @@
 //Libraries
 #include "game.h"
 
+//Game loop function
 void game_loop(game Game, int &turn) {
 
     //Print the board
