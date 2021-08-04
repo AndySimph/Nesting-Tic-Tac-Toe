@@ -30,8 +30,12 @@ game::~game() {
 //Function for a player move
 void game::player_move(char player) {
 
+    std::string user_input;
+
     if (player == 'w') {
-        std::cout << player << std::endl;
+        std::cout << player << ":  Give move: (1a-2)" << std::endl;
+        std::cin >> user_input;
+        std::cout << user_input << std::endl;
     } else {
         std::cout << player << std::endl;
     }
