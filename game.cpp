@@ -30,7 +30,11 @@ game::~game() {
 //Function for a player move
 void game::player_move(char player) {
 
-    std::cout << player << std::endl;
+    if (player == 'w') {
+        std::cout << player << std::endl;
+    } else {
+        std::cout << player << std::endl;
+    }
 
     return;
 }
