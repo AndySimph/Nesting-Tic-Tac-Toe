@@ -4,6 +4,8 @@
 #include <iostream>
 #include <vector>
 
+#include "entity.h"
+
 #pragma once
 
 //Player class
@@ -14,10 +16,11 @@ class player {
         player();
         ~player();
 
+        void create_entities();
         void print_val();
 
         //Vector of pairs to check
-        std::vector<std::pair<int, bool> > _piece;
+        std::vector<entity> _pieces;
 
         //Variables
         char _color;

@@ -6,15 +6,6 @@
 //Constructor
 player::player() {
 
-    //Initialize the pieces
-    int j = 0;
-    for (int i = 0; i < 6; i++) {
-        if ((i % 2) == 0) {
-            j++;
-        }
-        _piece.push_back( std::make_pair(j, false) );
-    }
-
 };
         
 //Destructor      
@@ -22,15 +13,44 @@ player::~player() {
 
 };
 
+//Function to create the entities
+void player::create_entities() {
+
+    //Initialize the pieces
+    int j = 0;
+    for (int i = 0; i < 6; i++) {
+
+        //Temporary entity
+        entity temp_ent;
+
+        //Increment every two pieces
+        if ((i % 2) == 0) {
+            j++;
+        }
+
+        //Assign the color and value
+        temp_ent._color = _color;
+        temp_ent._val = j;
+
+        //Push the entity piece into the vector
+        _pieces.push_back(temp_ent);
+    }
+
+    return;
+};
+
+//Function to print the entity values
 void player::print_val() {
 
     //Print team
     std::cout << _color << ": ";
 
-    //Print each available piece
-    for(int i = 0; i < _piece.size(); i++) {
-        if (_piece[i].second == false) {
-            std::cout << _piece[i].first;
+    //Print for each entity piece
+    for(int i = 0; i < _pieces.size(); i++) { 
+
+        //Print the value of each available piece
+        if (_pieces[i]._used == false) {
+            std::cout <<  _pieces[i]._val;
 
             //Give uniqueness between each piece of the same size
             if ((i%2) == 0) {
@@ -39,8 +59,9 @@ void player::print_val() {
                 std::cout << "b";
             }
             std::cout << "  ";
-        } 
+        }
     }
+
     std::cout << std::endl;
 
     return;

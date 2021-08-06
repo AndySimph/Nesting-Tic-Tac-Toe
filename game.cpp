@@ -16,9 +16,12 @@ game::game() {
         _board[i] = temp_char;
     }
 
-    //Initialize the player color
+    //Initialize each player color and entities
     _player1._color = 'w';
+    _player1.create_entities();
+
     _player2._color = 'b';
+    _player2.create_entities();
 
 };
         
