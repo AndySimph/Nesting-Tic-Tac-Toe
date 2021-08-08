@@ -19,7 +19,7 @@ class player {
         void create_entities();
         void print_val();
 
-        //Vector of pairs to check
+        //Vector of entities
         std::vector<entity> _pieces;
 
         //Variables
