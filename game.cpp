@@ -38,6 +38,16 @@ void game::player_move(char player) {
     if (player == 'w') {
         std::cout << player << ":  Give move: (1a-2)" << std::endl;
         std::cin >> user_input;
+        // std::cout << user_input << std::endl;
+        std::string delimiter = "-";
+
+        size_t pos = 0;
+        std::string token;
+        while ((pos = user_input.find(delimiter)) != std::string::npos) {
+            token = user_input.substr(0, pos);
+            std::cout << token << std::endl;
+            user_input.erase(0, pos + delimiter.length());
+        }
         std::cout << user_input << std::endl;
     } else {
         std::cout << player << std::endl;
