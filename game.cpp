@@ -42,11 +42,13 @@ void game::player_move(char player) {
         std::string delimiter = "-";
 
         size_t pos = 0;
-        std::string token;
+        std::vector<std::string> token;
+        int ctr = 0;
         while ((pos = user_input.find(delimiter)) != std::string::npos) {
-            token = user_input.substr(0, pos);
-            std::cout << token << std::endl;
+            token.push_back(user_input.substr(0, pos));
+            std::cout << token[ctr] << std::endl;
             user_input.erase(0, pos + delimiter.length());
+            ctr++;
         }
         std::cout << user_input << std::endl;
     } else {
