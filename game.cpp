@@ -10,9 +10,8 @@ game::game() {
 
     //Initialize the board
     for (int i = 0; i <= 8; i++) {
-
+        //Place a marker within each box
         temp_char = '0' + i;
-
         _board[i] = temp_char;
     }
 
@@ -33,30 +32,55 @@ game::~game() {
 //Function for a player move
 void game::player_move(char player) {
 
+    //Variables
     std::string user_input;
+    std::vector<std::string> parsed_input;
 
+    //If statement to decide which player turn it is
     if (player == 'w') {
+        //Get player input
         std::cout << player << ":  Give move: (1a-2)" << std::endl;
         std::cin >> user_input;
-        // std::cout << user_input << std::endl;
-        std::string delimiter = "-";
 
-        size_t pos = 0;
-        std::vector<std::string> token;
-        int ctr = 0;
-        while ((pos = user_input.find(delimiter)) != std::string::npos) {
-            token.push_back(user_input.substr(0, pos));
-            std::cout << token[ctr] << std::endl;
-            user_input.erase(0, pos + delimiter.length());
-            ctr++;
+        //Parse the user input
+        parse_input(user_input, parsed_input);
+        
+        //Output the parsed string
+        for (int i = 0; i < parsed_input.size(); i++) {
+            std::cout << parsed_input[i] << " ";
         }
-        std::cout << user_input << std::endl;
+        std::cout << std::endl;
+
     } else {
         std::cout << player << std::endl;
     }
 
     return;
 }
+
+//Function to parse the user input
+void game::parse_input(std::string user_input, std::vector<std::string> &parsed_input) {
+    
+    //Delimiter to parse the string
+    std::string delimiter = "-";
+
+    //Position of where to parse
+    size_t pos = 0;
+
+    //Loop to find the delimiter
+    while ((pos = user_input.find(delimiter)) != std::string::npos) {
+        //Push back the initial part of the parsed string
+        parsed_input.push_back(user_input.substr(0, pos));
+        
+        //Erase the initial part of the parsed string
+        user_input.erase(0, pos + delimiter.length());
+    }
+
+    //Push the final part of the parsed string
+    parsed_input.push_back(user_input);
+
+    return;
+};
 
 //Funtion to print the board
 void game::print_board() {

@@ -47,7 +47,6 @@ void player::print_val() {
 
     //Print for each entity piece
     for(int i = 0; i < _pieces.size(); i++) { 
-
         //Print the value of each available piece
         if (_pieces[i]._used == false) {
             std::cout <<  _pieces[i]._val;
