@@ -6,9 +6,6 @@
 //Game loop function
 void game_loop(game Game, int &turn) {
 
-    //Print the board
-    Game.print_board();
-
     //Do player move
     if ((turn % 2) == 1) {
         //player1 turn
@@ -23,6 +20,9 @@ void game_loop(game Game, int &turn) {
     //Increment turn
     turn++;
 
+    //Print the board
+    Game.print_board();
+
     return;
 };
 
@@ -32,6 +32,9 @@ int main() {
     game Game;
     bool play = true;
     int turn = 1;
+
+    //Print the board
+    Game.print_board();
 
     //Loop while play is true
     while(play) {
