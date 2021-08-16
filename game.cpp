@@ -53,6 +53,7 @@ void game::player_move(char player) {
 
         std::cout << parsed_input[0][0];
         std::cout << std::stoi(parsed_input[1]) << std::endl << std::endl;
+        _board[std::stoi(parsed_input[1])] = (parsed_input[0][0]);
 
     } else {
         std::cout << player << std::endl;
