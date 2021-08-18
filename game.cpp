@@ -46,18 +46,19 @@ void game::player_move(char player) {
         parse_input(user_input, parsed_input);
         
         //Output the parsed string
-        for (int i = 0; i < parsed_input.size(); i++) {
-            std::cout << parsed_input[i] << " ";
-        }
-        std::cout << std::endl;
+        // for (int i = 0; i < parsed_input.size(); i++) {
+        //     std::cout << parsed_input[i] << " ";
+        // }
+        // std::cout << std::endl;
 
-        std::cout << parsed_input[0][0];
-        std::cout << std::stoi(parsed_input[1]) << std::endl << std::endl;
+        // std::cout << parsed_input[0][0];
+        // std::cout << std::stoi(parsed_input[1]) << std::endl << std::endl;
 
         //Check if the spot is between 0-8
         if ((std::stoi(parsed_input[1]) < 9) && (std::stoi(parsed_input[1]) >= 0)) {
             _board[std::stoi(parsed_input[1])] = (parsed_input[0][0]);
         } else {
+            //Output error
             std::cout << "Error" << std::endl;
         }
 
