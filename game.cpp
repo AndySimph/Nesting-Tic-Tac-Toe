@@ -56,7 +56,15 @@ void game::player_move(char player) {
 
         //Check if the spot is between 0-8
         if ((std::stoi(parsed_input[1]) < 9) && (std::stoi(parsed_input[1]) >= 0)) {
-            _board[std::stoi(parsed_input[1])] = (parsed_input[0][0]);
+            
+            //Check if the entity has been used and exists
+            for (int i = 0; i < _player1._pieces.size(); i++) {
+                if ((_player1._pieces[i]._val == ((parsed_input[0][0]) - '0')) && (!_player1._pieces[i]._used)) {
+                    _player1._pieces[i]._used = false;
+                    _board[std::stoi(parsed_input[1])] = (parsed_input[0][0]);
+                }
+            }
+
         } else {
             //Output error
             std::cout << "Error" << std::endl;
