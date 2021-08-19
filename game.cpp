@@ -60,7 +60,7 @@ void game::player_move(char player) {
             //Check if the entity has been used and exists
             for (int i = 0; i < _player1._pieces.size(); i++) {
                 if ((_player1._pieces[i]._val == ((parsed_input[0][0]) - '0')) && (!_player1._pieces[i]._used)) {
-                    _player1._pieces[i]._used = false;
+                    _player1._pieces[i]._used = true;
                     _board[std::stoi(parsed_input[1])] = (parsed_input[0][0]);
                 }
             }
