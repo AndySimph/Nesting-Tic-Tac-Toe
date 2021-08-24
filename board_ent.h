@@ -17,6 +17,7 @@ class board_ent {
         int _val;
         bool _used;
         char _color;
+        char _char;
 
     private:
 
