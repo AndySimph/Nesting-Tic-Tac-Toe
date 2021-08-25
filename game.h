@@ -6,6 +6,7 @@
 #include <string>
 
 #include "player.h"
+#include "board_ent.h"
 
 #pragma once
 
@@ -23,6 +24,7 @@ class game {
         void print_board(); 
         //Variables
         char _board[9];     //For board
+        board_ent _board2[9];
 
         player _player1;    //For players
         player _player2;

@@ -13,6 +13,7 @@ game::game() {
         //Place a marker within each box
         temp_char = '0' + i;
         _board[i] = temp_char;
+        _board2[i]._char = temp_char;
     }
 
     //Initialize each player color and entities
@@ -65,7 +66,7 @@ void game::player_move(char player) {
                     _player1._pieces[i]._used = true;
 
                     if ((int(_board[std::stoi(parsed_input[1])] - '0') < 9) && (int(_board[std::stoi(parsed_input[1])] - '0') >= 0)) {
-                        _board[std::stoi(parsed_input[1])] = (parsed_input[0][0]);
+                        // _board[std::stoi(parsed_input[1])] = (parsed_input[0][0]);
                         used = true;
                     }
                     std::cout << _board[std::stoi(parsed_input[1])] << std::endl;
@@ -73,19 +74,6 @@ void game::player_move(char player) {
                 }
                 i++;
             }
-        
-            // for (int i = 0; i < _player1._pieces.size(); i++) {
-            //     if ((_player1._pieces[i]._val == ((parsed_input[0][0]) - '0')) && (!_player1._pieces[i]._used)) {
-            //         _player1._pieces[i]._used = true;
-
-            //         if ((int(_board[std::stoi(parsed_input[1])] - '0') < 9) && (int(_board[std::stoi(parsed_input[1])] - '0') >= 0)) {
-            //             _board[std::stoi(parsed_input[1])] = (parsed_input[0][0]);
-
-            //         }
-            //         std::cout << _board[std::stoi(parsed_input[1])] << std::endl;
-
-            //     }
-            // }
 
         } else {
             //Output error
@@ -138,7 +126,7 @@ void game::print_board() {
     //Loop through each element of the board
     for (int i = 0; i <= 8; i++) {
         //Print bars and the element
-        std::cout << _board[i];
+        std::cout << _board2[i]._char;
 
         //Check if it is the element position is a multiple of 3
         if (((i+1)%3) == 0) {
