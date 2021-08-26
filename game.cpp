@@ -66,8 +66,8 @@ void game::player_move(char player) {
                     _player1._pieces[i]._used = true;
 
                     if ((int(_board[std::stoi(parsed_input[1])] - '0') < 9) && (int(_board[std::stoi(parsed_input[1])] - '0') >= 0)) {
-                        // _board[std::stoi(parsed_input[1])] = (parsed_input[0][0]);
-                        used = true;
+                        _board[std::stoi(parsed_input[1])]._char = (parsed_input[0][0]);
+                        _board[std::stoi(parsed_input[1])]._used = true;
                     }
                     std::cout << _board[std::stoi(parsed_input[1])] << std::endl;
 
