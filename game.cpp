@@ -37,15 +37,17 @@ void game::player_move(char player) {
     std::string user_input;
     std::vector<std::string> parsed_input;
 
+    //Get player input
+    std::cout << player << ":  Give move: (1a-2)" << std::endl;
+    std::cin >> user_input;
+
+    //Parse the user input
+    parse_input(user_input, parsed_input);
+    
+
     //If statement to decide which player turn it is
     if (player == 'w') {
-        //Get player input
-        std::cout << player << ":  Give move: (1a-2)" << std::endl;
-        std::cin >> user_input;
-
-        //Parse the user input
-        parse_input(user_input, parsed_input);
-        
+    
         //Output the parsed string
         // for (int i = 0; i < parsed_input.size(); i++) {
         //     std::cout << parsed_input[i] << " ";
@@ -81,7 +83,30 @@ void game::player_move(char player) {
         }
 
     } else {
-        std::cout << player << std::endl;
+        //Check if the spot is between 0-8
+        if ((std::stoi(parsed_input[1]) < 9) && (std::stoi(parsed_input[1]) >= 0)) {
+            
+            //Check if the entity has been used and exists
+            int i = 0;
+            bool used = false;
+            while (!used) {
+                if ((_player1._pieces[i]._val == ((parsed_input[0][0]) - '0')) && (!_player1._pieces[i]._used)) {
+                    _player1._pieces[i]._used = true;
+
+                    if ((int(_board[std::stoi(parsed_input[1])] - '0') < 9) && (int(_board[std::stoi(parsed_input[1])] - '0') >= 0)) {
+                        _board[std::stoi(parsed_input[1])]._char = (parsed_input[0][0]);
+                        _board[std::stoi(parsed_input[1])]._used = true;
+                    }
+                    std::cout << _board[std::stoi(parsed_input[1])] << std::endl;
+
+                }
+                i++;
+            }
+
+        } else {
+            //Output error
+            std::cout << "Error" << std::endl;
+        }
     }
 
     return;
