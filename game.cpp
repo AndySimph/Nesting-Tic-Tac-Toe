@@ -67,14 +67,13 @@ void game::player_move(char player) {
                 if ((_player1._pieces[i]._val == ((parsed_input[0][0]) - '0')) && (!_player1._pieces[i]._used)) {
                     _player1._pieces[i]._used = true;
 
-                    if ((int(_board[std::stoi(parsed_input[1])]._char - '0') < 9) && (int(_board[std::stoi(parsed_input[1])]._char - '0') >= 0)) {
-                        // _board[std::stoi(parsed_input[1])]._char = (parsed_input[0][0]);
-                        // _board[std::stoi(parsed_input[1])]._used = true;
-                        // _board[std::stoi(parsed_input[1])]._used = 'w';
-                        std::cout << "Here" << std::endl;
+                    if ((int(_board2[std::stoi(parsed_input[1])]._char - '0') < 9) && (int(_board2[std::stoi(parsed_input[1])]._char - '0') >= 0)) {
+                        _board2[std::stoi(parsed_input[1])]._char = (parsed_input[0][0]);
+                        _board2[std::stoi(parsed_input[1])]._used = true;
+                        _board2[std::stoi(parsed_input[1])]._color = 'w';
+                        used = true;
 
                     }
-                    std::cout << _board[std::stoi(parsed_input[1])] << std::endl;
 
                 }
                 i++;
