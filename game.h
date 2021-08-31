@@ -22,9 +22,9 @@ class game {
         void player_move(char player);
         void parse_input(std::string user_input, std::vector<std::string> &parsed_input);
         void print_board(); 
+
         //Variables
-        char _board[9];     //For board
-        board_ent _board2[9];
+        board_ent _board[9];   //For board
 
         player _player1;    //For players
         player _player2;

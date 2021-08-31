@@ -12,8 +12,7 @@ game::game() {
     for (int i = 0; i <= 8; i++) {
         //Place a marker within each box
         temp_char = '0' + i;
-        _board[i] = temp_char;
-        _board2[i]._char = temp_char;
+        _board[i]._char = temp_char;
     }
 
     //Initialize each player color and entities
@@ -54,8 +53,8 @@ void game::player_move(char player) {
         // }
         // std::cout << std::endl;
 
-        std::cout << parsed_input[0][0];
-        std::cout << std::stoi(parsed_input[1]) << std::endl << std::endl;
+        // std::cout << parsed_input[0][0];
+        // std::cout << std::stoi(parsed_input[1]) << std::endl << std::endl;
 
         //Check if the spot is between 0-8
         if ((std::stoi(parsed_input[1]) < 9) && (std::stoi(parsed_input[1]) >= 0)) {
@@ -67,10 +66,10 @@ void game::player_move(char player) {
                 if ((_player1._pieces[i]._val == ((parsed_input[0][0]) - '0')) && (!_player1._pieces[i]._used)) {
                     _player1._pieces[i]._used = true;
 
-                    if ((int(_board2[std::stoi(parsed_input[1])]._char - '0') < 9) && (int(_board2[std::stoi(parsed_input[1])]._char - '0') >= 0)) {
-                        _board2[std::stoi(parsed_input[1])]._char = (parsed_input[0][0]);
-                        _board2[std::stoi(parsed_input[1])]._used = true;
-                        _board2[std::stoi(parsed_input[1])]._color = 'w';
+                    if ((int(_board[std::stoi(parsed_input[1])]._char - '0') < 9) && (int(_board[std::stoi(parsed_input[1])]._char - '0') >= 0)) {
+                        _board[std::stoi(parsed_input[1])]._char = (parsed_input[0][0]);
+                        _board[std::stoi(parsed_input[1])]._used = true;
+                        _board[std::stoi(parsed_input[1])]._color = 'w';
                         used = true;
 
                     }
@@ -154,7 +153,7 @@ void game::print_board() {
     //Loop through each element of the board
     for (int i = 0; i <= 8; i++) {
         //Print bars and the element
-        std::cout << _board2[i]._char;
+        std::cout << _board[i]._char;
 
         //Check if it is the element position is a multiple of 3
         if (((i+1)%3) == 0) {
