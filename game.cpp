@@ -53,8 +53,8 @@ void game::player_move(char player) {
         // }
         // std::cout << std::endl;
 
-        // std::cout << parsed_input[0][0];
-        // std::cout << std::stoi(parsed_input[1]) << std::endl << std::endl;
+        std::cout << parsed_input[0][0] << " ";
+        std::cout << std::stoi(parsed_input[1]) << std::endl << std::endl;
 
         //Check if the spot is between 0-8
         if ((std::stoi(parsed_input[1]) < 9) && (std::stoi(parsed_input[1]) >= 0)) {
@@ -67,7 +67,8 @@ void game::player_move(char player) {
                     _player1._pieces[i]._used = true;
 
                     if ((int(_board[std::stoi(parsed_input[1])]._char - '0') < 9) && (int(_board[std::stoi(parsed_input[1])]._char - '0') >= 0)) {
-                        _board[std::stoi(parsed_input[1])]._char = (parsed_input[0][0]);
+                        // _board[std::stoi(parsed_input[1])]._char = (parsed_input[0][0]);
+                        _board[std::stoi(parsed_input[1])]._char = 'w';
                         _board[std::stoi(parsed_input[1])]._used = true;
                         _board[std::stoi(parsed_input[1])]._color = 'w';
                         used = true;
@@ -95,7 +96,8 @@ void game::player_move(char player) {
                     _player1._pieces[i]._used = true;
 
                     if ((int(_board[std::stoi(parsed_input[1])]._char - '0') < 9) && (int(_board[std::stoi(parsed_input[1])]._char - '0') >= 0)) {
-                        _board[std::stoi(parsed_input[1])]._char = (parsed_input[0][0]);
+                        // _board[std::stoi(parsed_input[1])]._char = (parsed_input[0][0]);
+                        _board[std::stoi(parsed_input[1])]._char = 'b';
                         _board[std::stoi(parsed_input[1])]._used = true;
                         _board[std::stoi(parsed_input[1])]._color = 'b';
                         used = true;
