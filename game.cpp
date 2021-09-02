@@ -58,14 +58,18 @@ void game::player_move(char player) {
 
         //Check if the spot is between 0-8
         if ((std::stoi(parsed_input[1]) < 9) && (std::stoi(parsed_input[1]) >= 0)) {
-            
             //Check if the entity has been used and exists
             int i = 0;
             bool used = false;
+
+            //Loop to check if one of the piece is available
             while (!used) {
+                //Check the piece is correct
                 if ((_player1._pieces[i]._val == ((parsed_input[0][0]) - '0')) && (!_player1._pieces[i]._used)) {
+                    //Set the piece to used
                     _player1._pieces[i]._used = true;
 
+                    //Check if the spot on the board is available
                     if ((int(_board[std::stoi(parsed_input[1])]._char - '0') < 9) && (int(_board[std::stoi(parsed_input[1])]._char - '0') >= 0)) {
                         // _board[std::stoi(parsed_input[1])]._char = (parsed_input[0][0]);
                         _board[std::stoi(parsed_input[1])]._char = 'w';
@@ -91,10 +95,15 @@ void game::player_move(char player) {
             //Check if the entity has been used and exists
             int i = 0;
             bool used = false;
+
+            //Loop to check if one of the piece is available
             while (!used) {
+                //Check the piece is correct
                 if ((_player1._pieces[i]._val == ((parsed_input[0][0]) - '0')) && (!_player1._pieces[i]._used)) {
+                    //Set the piece to used
                     _player1._pieces[i]._used = true;
 
+                    //Check if the spot on the board is available
                     if ((int(_board[std::stoi(parsed_input[1])]._char - '0') < 9) && (int(_board[std::stoi(parsed_input[1])]._char - '0') >= 0)) {
                         // _board[std::stoi(parsed_input[1])]._char = (parsed_input[0][0]);
                         _board[std::stoi(parsed_input[1])]._char = 'b';
