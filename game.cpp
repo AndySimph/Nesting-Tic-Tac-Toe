@@ -111,6 +111,10 @@ void game::player_move(char player) {
                         _board[std::stoi(parsed_input[1])]._color = 'b';
                         used = true;
 
+                    } else {
+
+                        std::cout << "here" << std::endl;
+
                     }
 
                 }
