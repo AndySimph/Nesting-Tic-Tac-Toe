@@ -78,6 +78,8 @@ void game::player_move(char player) {
                         _board[std::stoi(parsed_input[1])]._color = 'w';
                         used = true;
 
+                        std::cout << '\n' << _board[std::stoi(parsed_input[1])]._val << std::endl;
+
                     }
 
                 }

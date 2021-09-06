@@ -46,8 +46,6 @@ int main() {
             play = false;
         }
 
-        Game.print_board();
-
     }
 
     return 0;
