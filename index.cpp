@@ -4,7 +4,7 @@
 #include "game.h"
 
 //Game loop function
-void game_loop(game Game, int &turn) {
+void game_loop(game & Game, int &turn) {
 
     //Do player move
     if ((turn % 2) == 1) {
@@ -45,6 +45,8 @@ int main() {
         if (turn == 3) {
             play = false;
         }
+
+        Game.print_board();
 
     }
 

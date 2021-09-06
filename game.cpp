@@ -73,7 +73,7 @@ void game::player_move(char player) {
                     if ((int(_board[std::stoi(parsed_input[1])]._char - '0') < 9) && (int(_board[std::stoi(parsed_input[1])]._char - '0') >= 0)) {
                         // _board[std::stoi(parsed_input[1])]._char = (parsed_input[0][0]);
                         _board[std::stoi(parsed_input[1])]._char = 'w';
-                        _board[std::stoi(parsed_input[1])]._val = parsed_input[0][0] - '0';
+                        _board[std::stoi(parsed_input[1])]._val = int(parsed_input[0][0] - '0');
                         _board[std::stoi(parsed_input[1])]._used = true;
                         _board[std::stoi(parsed_input[1])]._color = 'w';
                         used = true;
@@ -108,7 +108,7 @@ void game::player_move(char player) {
                     if ((int(_board[std::stoi(parsed_input[1])]._char - '0') < 9) && (int(_board[std::stoi(parsed_input[1])]._char - '0') >= 0)) {
                         // _board[std::stoi(parsed_input[1])]._char = (parsed_input[0][0]);
                         _board[std::stoi(parsed_input[1])]._char = 'b';
-                        _board[std::stoi(parsed_input[1])]._val = parsed_input[0][0] - '0';
+                        _board[std::stoi(parsed_input[1])]._val = int(parsed_input[0][0] - '0');
                         _board[std::stoi(parsed_input[1])]._used = true;
                         _board[std::stoi(parsed_input[1])]._color = 'b';
                         used = true;
