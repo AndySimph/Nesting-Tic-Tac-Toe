@@ -191,11 +191,105 @@ void game::print_board() {
             std::cout << " | ";
         }
     }
-    std::cout << std::endl;
+    std::cout << std::endl << std::endl;
 
     //Print player2 available pieces
     _player2.print_val();
     std::cout << std::endl;
 
+
+    //Print the other variables of the board
+    //Print a bar
+    for (int j = 0; j < 13; j++) {
+        std::cout << "-";
+    }
+    std::cout << std::endl << "| ";
+
+    //Loop through each element of the board
+    for (int i = 0; i <= 8; i++) {
+        //Print bars and the element
+        std::cout << _board[i]._color;
+
+        //Check if it is the element position is a multiple of 3
+        if (((i+1)%3) == 0) {
+            std::cout << " | " << std::endl;
+            
+            //Print a bar dividing each horizontal line
+            for (int j = 0; j < 13; j++) {
+                std::cout << "-";
+            }
+            if (i != 8) {
+                std::cout << std::endl << "| ";
+            }
+
+        } else {
+            std::cout << " | ";
+        }
+    }
+    std::cout << std::endl << std::endl;
+
+    //Print a bar
+    for (int j = 0; j < 13; j++) {
+        std::cout << "-";
+    }
+    std::cout << std::endl << "| ";
+
+    //Loop through each element of the board
+    for (int i = 0; i <= 8; i++) {
+        //Print bars and the element
+        std::cout << _board[i]._val;
+
+        //Check if it is the element position is a multiple of 3
+        if (((i+1)%3) == 0) {
+            std::cout << " | " << std::endl;
+            
+            //Print a bar dividing each horizontal line
+            for (int j = 0; j < 13; j++) {
+                std::cout << "-";
+            }
+            if (i != 8) {
+                std::cout << std::endl << "| ";
+            }
+
+        } else {
+            std::cout << " | ";
+        }
+    }
+    std::cout << std::endl << std::endl;
+
+    //Print a bar
+    for (int j = 0; j < 13; j++) {
+        std::cout << "-";
+    }
+    std::cout << std::endl << "| ";
+
+    //Loop through each element of the board
+    for (int i = 0; i <= 8; i++) {
+        //Print bars and the element
+        if (_board[i]._used) {
+            std::cout << "T";
+        } else {
+            std::cout << "F";
+        }
+
+        //Check if it is the element position is a multiple of 3
+        if (((i+1)%3) == 0) {
+            std::cout << " | " << std::endl;
+            
+            //Print a bar dividing each horizontal line
+            for (int j = 0; j < 13; j++) {
+                std::cout << "-";
+            }
+            if (i != 8) {
+                std::cout << std::endl << "| ";
+            }
+
+        } else {
+            std::cout << " | ";
+        }
+    }
+    std::cout << std::endl << std::endl;
+
     return;
 };
+
