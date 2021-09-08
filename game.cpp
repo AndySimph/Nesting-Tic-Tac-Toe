@@ -80,8 +80,14 @@ void game::player_move(char player) {
 
                         std::cout << '\n' << _board[std::stoi(parsed_input[1])]._val << std::endl;
 
+                    } else {
+                        std::cout << "1" << std::endl;
+                        used = true;
                     }
 
+                } else {
+                    std::cout << "2" << std::endl;
+                    used = true;
                 }
                 i++;
             }
@@ -116,12 +122,15 @@ void game::player_move(char player) {
                         used = true;
 
                     } else {
-
-                        std::cout << "here" << std::endl;
-
+                        std::cout << "3" << std::endl;
+                        used = true;
                     }
 
+                } else {
+                    std::cout << "4" << std::endl;
+                    used = true;
                 }
+
                 i++;
             }
 
