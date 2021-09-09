@@ -102,7 +102,7 @@ void game::player_move(char player) {
                 if (i > _player1._pieces.size()) {
                     used = true;
                 }
-
+                
             }
 
         } else {
@@ -124,9 +124,9 @@ void game::player_move(char player) {
             //Loop to check if one of the piece is available
             while (!used) {
                 //Check the piece is correct
-                if ((_player1._pieces[i]._val == ((parsed_input[0][0]) - '0')) && (!_player1._pieces[i]._used)) {
+                if ((_player2._pieces[i]._val == ((parsed_input[0][0]) - '0')) && (!_player2._pieces[i]._used)) {
                     //Set the piece to used
-                    _player1._pieces[i]._used = true;
+                    _player2._pieces[i]._used = true;
 
                     //Check if the spot on the board is available
                     if ((int(_board[std::stoi(parsed_input[1])]._char - '0') < 9) && (int(_board[std::stoi(parsed_input[1])]._char - '0') >= 0)) {
@@ -147,7 +147,7 @@ void game::player_move(char player) {
                 }
 
                 i++;
-                if (i > _player1._pieces.size()) {
+                if (i > _player2._pieces.size()) {
                     used = true;
                 }
             }
