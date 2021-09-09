@@ -86,10 +86,23 @@ void game::player_move(char player) {
                     }
 
                 } else {
-                    std::cout << "2" << std::endl;
-                    used = true;
+                    std::cout << "2, Invalid piece: choose again" << std::endl;
+                    // std::cin >> user_input;
+                    // std::cout << user_input << std::endl;
+
+                    // //Parse the new user input
+                    // parse_input(user_input, parsed_input);
+    
+                    // std::cout << parsed_input[0][0] << " ";
+                    // std::cout << std::stoi(parsed_input[1]) << std::endl << std::endl;
+
+
                 }
                 i++;
+                if (i > _player1._pieces.size()) {
+                    used = true;
+                }
+
             }
 
         } else {
@@ -98,6 +111,9 @@ void game::player_move(char player) {
         }
 
     } else {
+        std::cout << parsed_input[0][0] << " ";
+        std::cout << std::stoi(parsed_input[1]) << std::endl << std::endl;
+
         //Check if the spot is between 0-8
         if ((std::stoi(parsed_input[1]) < 9) && (std::stoi(parsed_input[1]) >= 0)) {
             
@@ -128,10 +144,12 @@ void game::player_move(char player) {
 
                 } else {
                     std::cout << "4" << std::endl;
-                    used = true;
                 }
 
                 i++;
+                if (i > _player1._pieces.size()) {
+                    used = true;
+                }
             }
 
         } else {

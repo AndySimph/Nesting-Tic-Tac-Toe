@@ -48,5 +48,7 @@ int main() {
 
     }
 
+    // Game.print_board();
+
     return 0;
 };
