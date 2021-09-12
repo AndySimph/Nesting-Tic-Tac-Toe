@@ -149,7 +149,7 @@ void game::player_move(char player) {
 
                 //Check if the we have loop through all the pieces
                 if (i > _player2._pieces.size()) {
-                    std::cout << "Invalid piece: choose again" << std::endl;
+                    td::cout << "Invalid piece: choose again" << std::endl;
                     std::cin >> user_input;
                     std::cout << user_input << std::endl;
 
@@ -158,6 +158,7 @@ void game::player_move(char player) {
     
                     std::cout << parsed_input[0][0] << " ";
                     std::cout << std::stoi(parsed_input[1]) << std::endl << std::endl;
+                    i = 0;
                 }
             }
 
