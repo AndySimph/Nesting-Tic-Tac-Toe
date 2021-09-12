@@ -100,6 +100,7 @@ void game::player_move(char player) {
     
                     std::cout << parsed_input[0][0] << " ";
                     std::cout << std::stoi(parsed_input[1]) << std::endl << std::endl;
+                    i = 0;
                 }
                 
             }
@@ -171,6 +172,9 @@ void game::player_move(char player) {
 
 //Function to parse the user input
 void game::parse_input(std::string user_input, std::vector<std::string> &parsed_input) {
+
+    //Clear the existing vector
+    parsed_input.clear();
     
     //Delimiter to parse the string
     std::string delimiter = "-";
