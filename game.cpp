@@ -70,7 +70,7 @@ void game::player_move(char player) {
                     _player1._pieces[i]._used = true;
 
                     //Check if the spot on the board is available
-                    if ((int(_board[std::stoi(parsed_input[1])]._char - '0') < 9) && (int(_board[std::stoi(parsed_input[1])]._char - '0') >= 0)) {
+                    if (_board[std::stoi(parsed_input[1])]._used == false) {
                         // _board[std::stoi(parsed_input[1])]._char = (parsed_input[0][0]);
                         _board[std::stoi(parsed_input[1])]._char = 'w';
                         _board[std::stoi(parsed_input[1])]._val = int(parsed_input[0][0] - '0');
@@ -129,13 +129,15 @@ void game::player_move(char player) {
                     _player2._pieces[i]._used = true;
 
                     //Check if the spot on the board is available
-                    if ((int(_board[std::stoi(parsed_input[1])]._char - '0') < 9) && (int(_board[std::stoi(parsed_input[1])]._char - '0') >= 0)) {
+                    if (_board[std::stoi(parsed_input[1])]._used == false) {
                         // _board[std::stoi(parsed_input[1])]._char = (parsed_input[0][0]);
                         _board[std::stoi(parsed_input[1])]._char = 'b';
                         _board[std::stoi(parsed_input[1])]._val = int(parsed_input[0][0] - '0');
                         _board[std::stoi(parsed_input[1])]._used = true;
                         _board[std::stoi(parsed_input[1])]._color = 'b';
                         used = true;
+
+                    //} else if (_board[std::stoi(parsed_input[1])]) {
 
                     } else {
                         std::cout << "3" << std::endl;
@@ -149,7 +151,7 @@ void game::player_move(char player) {
 
                 //Check if the we have loop through all the pieces
                 if (i > _player2._pieces.size()) {
-                    td::cout << "Invalid piece: choose again" << std::endl;
+                    std::cout << "Invalid piece: choose again" << std::endl;
                     std::cin >> user_input;
                     std::cout << user_input << std::endl;
 
