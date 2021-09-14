@@ -137,7 +137,12 @@ void game::player_move(char player) {
                         _board[std::stoi(parsed_input[1])]._color = 'b';
                         used = true;
 
-                    //} else if (_board[std::stoi(parsed_input[1])]) {
+                    //Check if the board position value is lower than the piece
+                    } else if (_board[std::stoi(parsed_input[1])]._val < int(parsed_input[0][0] - '0')) {
+                        _board[std::stoi(parsed_input[1])]._char = 'b';
+                        _board[std::stoi(parsed_input[1])]._val = int(parsed_input[0][0] - '0');
+                        _board[std::stoi(parsed_input[1])]._color = 'b';
+                        used = true;
 
                     } else {
                         std::cout << "3" << std::endl;
