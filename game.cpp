@@ -205,6 +205,12 @@ void game::parse_input(std::string user_input, std::vector<std::string> &parsed_
     return;
 };
 
+void game::place_piece() {
+
+
+    return;
+};
+
 //Funtion to print the board
 void game::print_board() {
 
