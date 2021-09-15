@@ -142,6 +142,7 @@ void game::player_move(char player) {
                         _board[std::stoi(parsed_input[1])]._char = 'b';
                         _board[std::stoi(parsed_input[1])]._val = int(parsed_input[0][0] - '0');
                         _board[std::stoi(parsed_input[1])]._color = 'b';
+                        //place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'));
                         used = true;
 
                     } else {
@@ -205,7 +206,7 @@ void game::parse_input(std::string user_input, std::vector<std::string> &parsed_
     return;
 };
 
-void game::place_piece() {
+void game::place_piece(int loc, int val) {
 
 
     return;
