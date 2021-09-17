@@ -71,15 +71,16 @@ void game::player_move(char player) {
 
                     //Check if the spot on the board is available
                     if (_board[std::stoi(parsed_input[1])]._used == false) {
-                        // _board[std::stoi(parsed_input[1])]._char = (parsed_input[0][0]);
-                        // _board[std::stoi(parsed_input[1])]._char = 'w';
-                        // _board[std::stoi(parsed_input[1])]._val = int(parsed_input[0][0] - '0');
                         place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), 'w');
                         _board[std::stoi(parsed_input[1])]._used = true;
-                        // _board[std::stoi(parsed_input[1])]._color = 'w';
                         used = true;
 
                         std::cout << '\n' << _board[std::stoi(parsed_input[1])]._val << std::endl;
+
+                    //Check if the board position value is lower than the piece
+                    } else if (_board[std::stoi(parsed_input[1])]._val < int(parsed_input[0][0] - '0')) {
+                        place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), 'w');
+                        used = true;
 
                     } else {
                         std::cout << "1" << std::endl;
@@ -131,19 +132,12 @@ void game::player_move(char player) {
 
                     //Check if the spot on the board is available
                     if (_board[std::stoi(parsed_input[1])]._used == false) {
-                        // _board[std::stoi(parsed_input[1])]._char = (parsed_input[0][0]);
-                        // _board[std::stoi(parsed_input[1])]._char = 'b';
-                        // _board[std::stoi(parsed_input[1])]._val = int(parsed_input[0][0] - '0');
                         place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), 'b');
                         _board[std::stoi(parsed_input[1])]._used = true;
-                        // _board[std::stoi(parsed_input[1])]._color = 'b';
                         used = true;
 
                     //Check if the board position value is lower than the piece
                     } else if (_board[std::stoi(parsed_input[1])]._val < int(parsed_input[0][0] - '0')) {
-                        // _board[std::stoi(parsed_input[1])]._char = 'b';
-                        // _board[std::stoi(parsed_input[1])]._val = int(parsed_input[0][0] - '0');
-                        // _board[std::stoi(parsed_input[1])]._color = 'b';
                         place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), 'b');
                         used = true;
 
@@ -208,9 +202,16 @@ void game::parse_input(std::string user_input, std::vector<std::string> &parsed_
     return;
 };
 
+//Function to place a piece
 void game::place_piece(int loc, int val, char color) {
 
     _board[loc]._char = color;
+    // if (color = 'w') {
+    //     switch
+
+    // } else {
+
+    // }
     _board[loc]._val = val;
     _board[loc]._color = color;
 
