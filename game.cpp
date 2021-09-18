@@ -43,7 +43,6 @@ void game::player_move(char player) {
     //Parse the user input
     parse_input(user_input, parsed_input);
     
-
     //If statement to decide which player turn it is
     if (player == 'w') {
     
@@ -52,7 +51,6 @@ void game::player_move(char player) {
         //     std::cout << parsed_input[i] << " ";
         // }
         // std::cout << std::endl;
-
         std::cout << parsed_input[0][0] << " ";
         std::cout << std::stoi(parsed_input[1]) << std::endl << std::endl;
 
@@ -118,7 +116,6 @@ void game::player_move(char player) {
 
         //Check if the spot is between 0-8
         if ((std::stoi(parsed_input[1]) < 9) && (std::stoi(parsed_input[1]) >= 0)) {
-            
             //Check if the entity has been used and exists
             int i = 0;
             bool used = false;
@@ -205,15 +202,52 @@ void game::parse_input(std::string user_input, std::vector<std::string> &parsed_
 //Function to place a piece
 void game::place_piece(int loc, int val, char color) {
 
-    _board[loc]._char = color;
-    // if (color = 'w') {
-    //     switch
+    //Check color of player
+    if (color == 'w') {
+        //Switch case to choose what char to place
+        switch (val) {
+            case 1:
+                _board[loc]._char = 'R';
+                break;
 
-    // } else {
+            case 2:
+                _board[loc]._char = 'Q';
+                break;
 
-    // }
+            case 3:
+                _board[loc]._char = 'K';
+                break;
+        
+        }
+
+    } else {
+        //Switch case to choose what char to place
+        switch (val) {
+            case 1:
+                _board[loc]._char = 'r';
+                break;
+
+            case 2:
+                _board[loc]._char = 'q';
+                break;
+
+            case 3:
+                _board[loc]._char = 'k';
+                break;
+        
+        }
+
+    }
+
+    //Set value and color
     _board[loc]._val = val;
     _board[loc]._color = color;
+
+    return;
+};
+
+void game::check_win() {
+
 
     return;
 };
