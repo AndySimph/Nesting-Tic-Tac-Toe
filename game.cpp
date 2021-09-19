@@ -246,7 +246,8 @@ void game::place_piece(int loc, int val, char color) {
     return;
 };
 
-void game::check_win() {
+void game::check_win(char color) {
+
 
 
     return;
