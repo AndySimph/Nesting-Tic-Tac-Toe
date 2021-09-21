@@ -37,7 +37,7 @@ void game::player_move(char player) {
     std::vector<std::string> parsed_input;
 
     //Get player input
-    std::cout << player << ":  Give move: (1a-2)" << std::endl;
+    std::cout << player << ":  Give move: (1-2), (piece value-location)" << std::endl;
     std::cin >> user_input;
 
     //Parse the user input
@@ -160,7 +160,7 @@ void game::player_move(char player) {
                     } else {
                         std::cout << "Invalid location: choose again" << std::endl;
                         std::cin >> user_input;
-                        std::cout << user_input << std::endl;
+                        std::cout << user_input << std::endl; 
 
                         //Parse the new user input
                         parse_input(user_input, parsed_input);
@@ -201,7 +201,6 @@ void game::player_move(char player) {
 
 //Function to parse the user input
 void game::parse_input(std::string user_input, std::vector<std::string> &parsed_input) {
-
     //Clear the existing vector
     parsed_input.clear();
     
@@ -211,15 +210,25 @@ void game::parse_input(std::string user_input, std::vector<std::string> &parsed_
     //Position of where to parse
     size_t pos = 0;
 
-    //Loop to find the delimiter
-    while ((pos = user_input.find(delimiter)) != std::string::npos) {
-        //Push back the initial part of the parsed string
-        parsed_input.push_back(user_input.substr(0, pos));
-        
-        //Erase the initial part of the parsed string
-        user_input.erase(0, pos + delimiter.length());
-    }
+    //Check if delimiter exist
+    if (user_input.find(delimiter) == std::string::npos) {
+        //Loop until correct input
+        while (user_input.find(delimiter) == std::string::npos) {
+            //Output and input
+            std::cout << "Invalid Input, try again:";
+            std::cin >> user_input;
+        } 
+    } 
 
+    //Loop to find the delimiter
+        while ((pos = user_input.find(delimiter)) != std::string::npos) {
+            //Push back the initial part of the parsed string
+            parsed_input.push_back(user_input.substr(0, pos));
+            
+            //Erase the initial part of the parsed string
+            user_input.erase(0, pos + delimiter.length());
+        }
+    
     //Push the final part of the parsed string
     parsed_input.push_back(user_input);
 
