@@ -64,7 +64,6 @@ void game::player_move(char player) {
             while (!used) {
                 //Check the piece is correct
                 if ((_player1._pieces[i]._val == ((parsed_input[0][0]) - '0')) && (!_player1._pieces[i]._used)) {
-
                     //Check if the spot on the board is available
                     if (_board[std::stoi(parsed_input[1])]._used == false) {
                         //Place the piece
@@ -137,7 +136,6 @@ void game::player_move(char player) {
             while (!used) {
                 //Check the piece is correct
                 if ((_player2._pieces[i]._val == ((parsed_input[0][0]) - '0')) && (!_player2._pieces[i]._used)) {
-
                     //Check if the spot on the board is available
                     if (_board[std::stoi(parsed_input[1])]._used == false) {
                         //Place the piece
