@@ -42,7 +42,7 @@ int main() {
         //Call the game loop
         game_loop(Game, turn);
 
-        if (turn == 3) {
+        if (turn == 10) {
             play = false;
         }
 

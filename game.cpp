@@ -246,8 +246,11 @@ void game::place_piece(int loc, int val, char color) {
     return;
 };
 
+//Function to check win conditions
 void game::check_win(char color) {
 
+    //Values to check;
+    int check_num [5] = {1, 3, 4, 5, 7};
 
 
     return;
