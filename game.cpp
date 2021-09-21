@@ -64,12 +64,14 @@ void game::player_move(char player) {
             while (!used) {
                 //Check the piece is correct
                 if ((_player1._pieces[i]._val == ((parsed_input[0][0]) - '0')) && (!_player1._pieces[i]._used)) {
-                    //Set the piece to used
-                    _player1._pieces[i]._used = true;
 
                     //Check if the spot on the board is available
                     if (_board[std::stoi(parsed_input[1])]._used == false) {
+                        //Place the piece
                         place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), 'w');
+                        
+                        //Set the piece to used
+                        _player1._pieces[i]._used = true;
                         _board[std::stoi(parsed_input[1])]._used = true;
                         used = true;
 
@@ -77,12 +79,23 @@ void game::player_move(char player) {
 
                     //Check if the board position value is lower than the piece
                     } else if (_board[std::stoi(parsed_input[1])]._val < int(parsed_input[0][0] - '0')) {
+                        //Place the piece
                         place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), 'w');
+                        //Set the piece to used
+                        _player1._pieces[i]._used = true;
                         used = true;
 
                     } else {
-                        std::cout << "1" << std::endl;
-                        used = true;
+                        std::cout << "Invalid location: choose again" << std::endl;
+                        std::cin >> user_input;
+                        std::cout << user_input << std::endl;
+
+                        //Parse the new user input
+                        parse_input(user_input, parsed_input);
+        
+                        std::cout << parsed_input[0][0] << " ";
+                        std::cout << std::stoi(parsed_input[1]) << std::endl << std::endl;
+                        i = -1;
                     }
 
                 } 
@@ -124,23 +137,37 @@ void game::player_move(char player) {
             while (!used) {
                 //Check the piece is correct
                 if ((_player2._pieces[i]._val == ((parsed_input[0][0]) - '0')) && (!_player2._pieces[i]._used)) {
-                    //Set the piece to used
-                    _player2._pieces[i]._used = true;
 
                     //Check if the spot on the board is available
                     if (_board[std::stoi(parsed_input[1])]._used == false) {
+                        //Place the piece
                         place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), 'b');
+
+                        //Set the piece to used
+                        _player2._pieces[i]._used = true;
                         _board[std::stoi(parsed_input[1])]._used = true;
                         used = true;
 
                     //Check if the board position value is lower than the piece
                     } else if (_board[std::stoi(parsed_input[1])]._val < int(parsed_input[0][0] - '0')) {
+                        //Place the piece
                         place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), 'b');
+
+                        //Set the piece to used
+                        _player2._pieces[i]._used = true;
                         used = true;
 
                     } else {
-                        std::cout << "3" << std::endl;
-                        used = true;
+                        std::cout << "Invalid location: choose again" << std::endl;
+                        std::cin >> user_input;
+                        std::cout << user_input << std::endl;
+
+                        //Parse the new user input
+                        parse_input(user_input, parsed_input);
+        
+                        std::cout << parsed_input[0][0] << " ";
+                        std::cout << std::stoi(parsed_input[1]) << std::endl << std::endl;
+                        i = -1;
                     }
 
                 }
