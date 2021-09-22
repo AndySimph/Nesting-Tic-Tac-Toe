@@ -52,7 +52,7 @@ void game::player_move(char player) {
         // }
         // std::cout << std::endl;
         std::cout << parsed_input[0][0] << " ";
-        std::cout << std::stoi(parsed_input[1]) << std::endl << std::endl;
+        std::cout << std::stoi(parsed_input[1]) << std::endl;
 
         //Check if the spot is between 0-8
         if ((std::stoi(parsed_input[1]) < 9) && (std::stoi(parsed_input[1]) >= 0)) {
@@ -74,8 +74,6 @@ void game::player_move(char player) {
                         _board[std::stoi(parsed_input[1])]._used = true;
                         used = true;
 
-                        std::cout << '\n' << _board[std::stoi(parsed_input[1])]._val << std::endl;
-
                     //Check if the board position value is lower than the piece
                     } else if (_board[std::stoi(parsed_input[1])]._val < int(parsed_input[0][0] - '0')) {
                         //Place the piece
@@ -93,7 +91,7 @@ void game::player_move(char player) {
                         parse_input(user_input, parsed_input);
         
                         std::cout << parsed_input[0][0] << " ";
-                        std::cout << std::stoi(parsed_input[1]) << std::endl << std::endl;
+                        std::cout << std::stoi(parsed_input[1]) << std::endl;
                         i = -1;
                     }
 
@@ -124,7 +122,7 @@ void game::player_move(char player) {
 
     } else {
         std::cout << parsed_input[0][0] << " ";
-        std::cout << std::stoi(parsed_input[1]) << std::endl << std::endl;
+        std::cout << std::stoi(parsed_input[1]) << std::endl;
 
         //Check if the spot is between 0-8
         if ((std::stoi(parsed_input[1]) < 9) && (std::stoi(parsed_input[1]) >= 0)) {
@@ -183,7 +181,7 @@ void game::player_move(char player) {
                     parse_input(user_input, parsed_input);
     
                     std::cout << parsed_input[0][0] << " ";
-                    std::cout << std::stoi(parsed_input[1]) << std::endl << std::endl;
+                    std::cout << std::stoi(parsed_input[1]) << std::endl;
                     i = 0;
                 }
             }
@@ -281,13 +279,101 @@ void game::place_piece(int loc, int val, char color) {
 };
 
 //Function to check win conditions
-void game::check_win(char color) {
+bool game::check_win(char color) {
+    //Locations to check;
+    int loc [5] = {1, 3, 4, 5, 7};
 
-    //Values to check;
-    int check_num [5] = {1, 3, 4, 5, 7};
+    //Bool for win
+    bool win = false;
 
+    //Loop through each
+    for (int i = 0; i < 0; i++) {
+        //Switch case for each of the numbers to check
+        switch (loc[i]) {
+            //*|*|*
+            //----- 
+            // | |
+            //-----
+            // | | 
+            case 1:
+                if (_board[loc[i]]._color == color) {
+                    if ((_board[loc[i] - 1]._color == color) && (_board[loc[i] + 1]._color == color)) {
+                        win = true;
+                    }
+                    std::cout << "here" << std::endl;
+                }
+                break;
 
-    return;
+            //*| | 
+            //----- 
+            //*| |
+            //-----
+            //*| | 
+            case 3:
+                if (_board[loc[i]]._color == color) {
+                    if ((_board[loc[i] - 3]._color == color) && (_board[loc[i] + 3]._color == color)) {
+                        win = true;
+                    }
+                }
+                break;
+
+            //*|*|*
+            //----- 
+            //*|*|*
+            //-----
+            //*|*|* 
+            case 4:
+                if (_board[loc[i]]._color == color) {
+                    if ((_board[loc[i] - 1]._color == color) && (_board[loc[i] + 1]._color == color)) {
+                        win = true;
+                    }
+                    if ((_board[loc[i] - 2]._color == color) && (_board[loc[i] + 2]._color == color)) {
+                        win = true;
+                    }
+                    if ((_board[loc[i] - 3]._color == color) && (_board[loc[i] + 3]._color == color)) {
+                        win = true;
+                    }
+                    if ((_board[loc[i] - 4]._color == color) && (_board[loc[i] + 4]._color == color)) {
+                        win = true;
+                    }
+                }
+                break;
+
+            // | |*
+            //----- 
+            // | |*
+            //-----
+            // | |* 
+            case 5:
+                if (_board[loc[i]]._color == color) {
+                    if ((_board[loc[i] - 3]._color == color) && (_board[loc[i] + 3]._color == color)) {
+                        win = true;
+                    }
+                }
+                break;
+
+            // | | 
+            //----- 
+            // | |
+            //-----
+            //*|*|*
+            case 7:
+                if (_board[loc[i]]._color == color) {
+                    if ((_board[loc[i] - 1]._color == color) && (_board[loc[i] + 1]._color == color)) {
+                        win = true;
+                    }
+                }
+                break;
+
+        }
+
+        //Break the loop if a win occurs
+        if (win) {
+            break;
+        }
+    }
+
+    return win;
 };
 
 //Funtion to print the board

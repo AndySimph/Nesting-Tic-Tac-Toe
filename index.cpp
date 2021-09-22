@@ -32,6 +32,7 @@ int main() {
     game Game;
     bool play = true;
     int turn = 1;
+    char winner;
 
     //Print the board
     Game.print_board();
@@ -42,10 +43,27 @@ int main() {
         //Call the game loop
         game_loop(Game, turn);
 
-        if (turn == 10) {
+        if (turn == 12) {
             play = false;
         }
 
+        //Check if a win occurs
+        if (Game.check_win('w')) {
+            //Set winner and stop playing
+            winner = 'w';
+            play = false;
+
+        } else if (Game.check_win('b')) {
+            //Set winner and stop playing
+            winner = 'b';
+            play = false;
+        }
+    }
+
+    if (winner == 'w') {
+        std::cout << "Winner is player 1!" << std::endl;
+    } else {
+        std::cout << "Winner is player 2!" << std::endl;
     }
 
     // Game.print_board();
