@@ -324,17 +324,12 @@ bool game::check_win(char color) {
             //*|*|* 
             case 4:
                 if (_board[loc[i]]._color == color) {
-                    if ((_board[loc[i] - 1]._color == color) && (_board[loc[i] + 1]._color == color)) {
-                        win = true;
-                    }
-                    if ((_board[loc[i] - 2]._color == color) && (_board[loc[i] + 2]._color == color)) {
-                        win = true;
-                    }
-                    if ((_board[loc[i] - 3]._color == color) && (_board[loc[i] + 3]._color == color)) {
-                        win = true;
-                    }
-                    if ((_board[loc[i] - 4]._color == color) && (_board[loc[i] + 4]._color == color)) {
-                        win = true;
+                    //Loop through each possible win and check
+                    for (j = 0; j < 4; j++) {
+                        if ((_board[loc[i] - j]._color == color) && (_board[loc[i] + j]._color == color)) {
+                            win = true;
+                            break;
+                        }
                     }
                 }
                 break;
