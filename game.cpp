@@ -287,7 +287,7 @@ bool game::check_win(char color) {
     bool win = false;
 
     //Loop through each
-    for (int i = 0; i < 0; i++) {
+    for (int i = 0; i < 4; i++) {
         //Switch case for each of the numbers to check
         switch (loc[i]) {
             //*|*|*
@@ -300,7 +300,6 @@ bool game::check_win(char color) {
                     if ((_board[loc[i] - 1]._color == color) && (_board[loc[i] + 1]._color == color)) {
                         win = true;
                     }
-                    std::cout << "here" << std::endl;
                 }
                 break;
 
@@ -325,7 +324,7 @@ bool game::check_win(char color) {
             case 4:
                 if (_board[loc[i]]._color == color) {
                     //Loop through each possible win and check
-                    for (j = 0; j < 4; j++) {
+                    for (int j = 0; j < 4; j++) {
                         if ((_board[loc[i] - j]._color == color) && (_board[loc[i] + j]._color == color)) {
                             win = true;
                             break;
