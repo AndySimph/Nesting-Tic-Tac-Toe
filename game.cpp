@@ -45,14 +45,6 @@ void game::player_move(char player) {
     
     //If statement to decide which player turn it is
     if (player == 'w') {
-    
-        //Output the parsed string
-        // for (int i = 0; i < parsed_input.size(); i++) {
-        //     std::cout << parsed_input[i] << " ";
-        // }
-        // std::cout << std::endl;
-        std::cout << parsed_input[0][0] << " ";
-        std::cout << std::stoi(parsed_input[1]) << std::endl;
 
         //Check if the spot is between 0-8
         if ((std::stoi(parsed_input[1]) < 9) && (std::stoi(parsed_input[1]) >= 0)) {
@@ -83,6 +75,7 @@ void game::player_move(char player) {
                         used = true;
 
                     } else {
+                        //Get new input
                         std::cout << "Invalid location: choose again" << std::endl;
                         std::cin >> user_input;
                         std::cout << user_input << std::endl;
@@ -90,8 +83,7 @@ void game::player_move(char player) {
                         //Parse the new user input
                         parse_input(user_input, parsed_input);
         
-                        std::cout << parsed_input[0][0] << " ";
-                        std::cout << std::stoi(parsed_input[1]) << std::endl;
+                        //Reset counter
                         i = -1;
                     }
 
@@ -101,15 +93,15 @@ void game::player_move(char player) {
                 i++;
 
                 if (i > _player1._pieces.size()) {
+                    //Get new input
                     std::cout << "Invalid piece: choose again" << std::endl;
                     std::cin >> user_input;
                     std::cout << user_input << std::endl;
 
                     //Parse the new user input
                     parse_input(user_input, parsed_input);
-    
-                    std::cout << parsed_input[0][0] << " ";
-                    std::cout << std::stoi(parsed_input[1]) << std::endl << std::endl;
+
+                    //Reset counter
                     i = 0;
                 }
                 
@@ -121,9 +113,6 @@ void game::player_move(char player) {
         }
 
     } else {
-        std::cout << parsed_input[0][0] << " ";
-        std::cout << std::stoi(parsed_input[1]) << std::endl;
-
         //Check if the spot is between 0-8
         if ((std::stoi(parsed_input[1]) < 9) && (std::stoi(parsed_input[1]) >= 0)) {
             //Check if the entity has been used and exists
@@ -154,6 +143,7 @@ void game::player_move(char player) {
                         used = true;
 
                     } else {
+                        //Get new input
                         std::cout << "Invalid location: choose again" << std::endl;
                         std::cin >> user_input;
                         std::cout << user_input << std::endl; 
@@ -161,8 +151,7 @@ void game::player_move(char player) {
                         //Parse the new user input
                         parse_input(user_input, parsed_input);
         
-                        std::cout << parsed_input[0][0] << " ";
-                        std::cout << std::stoi(parsed_input[1]) << std::endl << std::endl;
+                        //Reset counter
                         i = -1;
                     }
 
@@ -173,6 +162,7 @@ void game::player_move(char player) {
 
                 //Check if the we have loop through all the pieces
                 if (i > _player2._pieces.size()) {
+                    //Get new input
                     std::cout << "Invalid piece: choose again" << std::endl;
                     std::cin >> user_input;
                     std::cout << user_input << std::endl;
@@ -180,8 +170,7 @@ void game::player_move(char player) {
                     //Parse the new user input
                     parse_input(user_input, parsed_input);
     
-                    std::cout << parsed_input[0][0] << " ";
-                    std::cout << std::stoi(parsed_input[1]) << std::endl;
+                    //Reset counter
                     i = 0;
                 }
             }
