@@ -66,7 +66,5 @@ int main() {
         std::cout << "Winner is player 2!" << std::endl;
     }
 
-    // Game.print_board();
-
     return 0;
 };
