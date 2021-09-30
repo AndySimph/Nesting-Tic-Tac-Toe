@@ -206,13 +206,13 @@ void game::parse_input(std::string user_input, std::vector<std::string> &parsed_
     } 
 
     //Loop to find the delimiter
-        while ((pos = user_input.find(delimiter)) != std::string::npos) {
-            //Push back the initial part of the parsed string
-            parsed_input.push_back(user_input.substr(0, pos));
-            
-            //Erase the initial part of the parsed string
-            user_input.erase(0, pos + delimiter.length());
-        }
+    while ((pos = user_input.find(delimiter)) != std::string::npos) {
+        //Push back the initial part of the parsed string
+        parsed_input.push_back(user_input.substr(0, pos));
+        
+        //Erase the initial part of the parsed string
+        user_input.erase(0, pos + delimiter.length());
+    }
     
     //Push the final part of the parsed string
     parsed_input.push_back(user_input);
