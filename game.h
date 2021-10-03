@@ -30,6 +30,7 @@ class game {
 
         player _player1;    //For players
         player _player2;
+        player _players[1];
 
     private:
 
