@@ -494,3 +494,4 @@ void game::print_board() {
     return;
 };
 
+//Area to test new player array
