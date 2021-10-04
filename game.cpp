@@ -495,3 +495,73 @@ void game::print_board() {
 };
 
 //Area to test new player array
+/*
+//Check if the spot is between 0-8
+        if ((std::stoi(parsed_input[1]) < 9) && (std::stoi(parsed_input[1]) >= 0)) {
+            //Check if the entity has been used and exists
+            int i = 0;
+            bool used = false;
+
+            //Loop to check if one of the piece is available
+            while (!used) {
+                //Check the piece is correct
+                if ((_players[num]._pieces[i]._val == ((parsed_input[0][0]) - '0')) && (!_players[num]._pieces[i]._used)) {
+                    //Check if the spot on the board is available
+                    if (_board[std::stoi(parsed_input[1])]._used == false) {
+                        //Place the piece
+                        place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), 'w');
+                        
+                        //Set the piece to used
+                        _players[num]._pieces[i]._used = true;
+                        _board[std::stoi(parsed_input[1])]._used = true;
+                        used = true;
+
+                    //Check if the board position value is lower than the piece
+                    } else if (_board[std::stoi(parsed_input[1])]._val < int(parsed_input[0][0] - '0')) {
+                        //Place the piece
+                        place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), 'w');
+                        //Set the piece to used
+                        _players[num]._pieces[i]._used = true;
+                        used = true;
+
+                    } else {
+                        //Get new input
+                        std::cout << "Invalid location: choose again" << std::endl;
+                        std::cin >> user_input;
+                        std::cout << user_input << std::endl;
+
+                        //Parse the new user input
+                        parse_input(user_input, parsed_input);
+        
+                        //Reset counter
+                        i = -1;
+                    }
+
+                } 
+
+                //Increment the piece
+                i++;
+
+                if (i > _players[num]._pieces.size()) {
+                    //Get new input
+                    std::cout << "Invalid piece: choose again" << std::endl;
+                    std::cin >> user_input;
+                    std::cout << user_input << std::endl;
+
+                    //Parse the new user input
+                    parse_input(user_input, parsed_input);
+
+                    //Reset counter
+                    i = 0;
+                }
+                
+            }
+
+        } else {
+            //Output error
+            std::cout << "Error" << std::endl;
+        }
+
+
+
+*/
