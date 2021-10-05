@@ -22,6 +22,14 @@ game::game() {
     _player2._color = 'b';
     _player2.create_entities();
 
+    _players[0]._color = 'w';
+    _players[1]._color = 'b';
+
+    for (int i = 0; i < 2; i++) {
+
+        _players[i].create_entities();
+    }
+
 };
         
 //Destructor      
