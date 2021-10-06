@@ -25,6 +25,7 @@ game::game() {
     _players[0]._color = 'w';
     _players[1]._color = 'b';
 
+    //Loop through each of the players and create the entities
     for (int i = 0; i < 2; i++) {
 
         _players[i].create_entities();
