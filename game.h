@@ -22,6 +22,7 @@ class game {
         void player_move(char player);
         void parse_input(std::string user_input, std::vector<std::string> &parsed_input);
         void place_piece(int loc, int val, char color);
+        void move(std::string &user_input, std::vector<std::string> &parsed_input, char col);
         bool check_win(char color);
         void print_board(); 
 

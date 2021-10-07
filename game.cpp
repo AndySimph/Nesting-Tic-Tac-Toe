@@ -504,7 +504,7 @@ void game::print_board() {
 };
 
 //Area to test new player array
-void game::move() {
+void game::move(std::string &user_input, std::vector<std::string> &parsed_input, char col) {
 /*
     //Check if the spot is between 0-8
     if ((std::stoi(parsed_input[1]) < 9) && (std::stoi(parsed_input[1]) >= 0)) {
@@ -519,7 +519,7 @@ void game::move() {
                 //Check if the spot on the board is available
                 if (_board[std::stoi(parsed_input[1])]._used == false) {
                     //Place the piece
-                    place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), 'w');
+                    place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), col);
                     
                     //Set the piece to used
                     _players[num]._pieces[i]._used = true;
@@ -529,7 +529,7 @@ void game::move() {
                 //Check if the board position value is lower than the piece
                 } else if (_board[std::stoi(parsed_input[1])]._val < int(parsed_input[0][0] - '0')) {
                     //Place the piece
-                    place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), 'w');
+                    place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), col);
                     //Set the piece to used
                     _players[num]._pieces[i]._used = true;
                     used = true;
