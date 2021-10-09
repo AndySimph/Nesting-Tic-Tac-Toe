@@ -55,7 +55,7 @@ void game::player_move(char player) {
     //If statement to decide which player turn it is
     if (player == 'w') {
 
-        move(user_input, parsed_input, 'w');
+        move(0, user_input, parsed_input, 'w');
 
         //Check if the spot is between 0-8
         if ((std::stoi(parsed_input[1]) < 9) && (std::stoi(parsed_input[1]) >= 0)) {
@@ -125,7 +125,7 @@ void game::player_move(char player) {
 
     } else {
 
-        move(user_input, parsed_input, 'b');
+        move(1, user_input, parsed_input, 'b');
 
         //Check if the spot is between 0-8
         if ((std::stoi(parsed_input[1]) < 9) && (std::stoi(parsed_input[1]) >= 0)) {
@@ -509,7 +509,7 @@ void game::print_board() {
 };
 
 //Area to test new player array
-void game::move(std::string &user_input, std::vector<std::string> &parsed_input, char col) {
+void game::move(int num, std::string &user_input, std::vector<std::string> &parsed_input, char col) {
 
     //Check if the spot is between 0-8
     if ((std::stoi(parsed_input[1]) < 9) && (std::stoi(parsed_input[1]) >= 0)) {
@@ -578,5 +578,5 @@ void game::move(std::string &user_input, std::vector<std::string> &parsed_input,
     }
 
 
-    return void;
+    return;
 }
