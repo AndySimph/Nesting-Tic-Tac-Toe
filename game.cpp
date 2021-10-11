@@ -57,142 +57,142 @@ void game::player_move(char player) {
 
         move(0, user_input, parsed_input, 'w');
 
-        //Check if the spot is between 0-8
-        if ((std::stoi(parsed_input[1]) < 9) && (std::stoi(parsed_input[1]) >= 0)) {
-            //Check if the entity has been used and exists
-            int i = 0;
-            bool used = false;
+        // //Check if the spot is between 0-8
+        // if ((std::stoi(parsed_input[1]) < 9) && (std::stoi(parsed_input[1]) >= 0)) {
+        //     //Check if the entity has been used and exists
+        //     int i = 0;
+        //     bool used = false;
 
-            //Loop to check if one of the piece is available
-            while (!used) {
-                //Check the piece is correct
-                if ((_player1._pieces[i]._val == ((parsed_input[0][0]) - '0')) && (!_player1._pieces[i]._used)) {
-                    //Check if the spot on the board is available
-                    if (_board[std::stoi(parsed_input[1])]._used == false) {
-                        //Place the piece
-                        place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), 'w');
+        //     //Loop to check if one of the piece is available
+        //     while (!used) {
+        //         //Check the piece is correct
+        //         if ((_player1._pieces[i]._val == ((parsed_input[0][0]) - '0')) && (!_player1._pieces[i]._used)) {
+        //             //Check if the spot on the board is available
+        //             if (_board[std::stoi(parsed_input[1])]._used == false) {
+        //                 //Place the piece
+        //                 place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), 'w');
                         
-                        //Set the piece to used
-                        _player1._pieces[i]._used = true;
-                        _board[std::stoi(parsed_input[1])]._used = true;
-                        used = true;
+        //                 //Set the piece to used
+        //                 _player1._pieces[i]._used = true;
+        //                 _board[std::stoi(parsed_input[1])]._used = true;
+        //                 used = true;
 
-                    //Check if the board position value is lower than the piece
-                    } else if (_board[std::stoi(parsed_input[1])]._val < int(parsed_input[0][0] - '0')) {
-                        //Place the piece
-                        place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), 'w');
-                        //Set the piece to used
-                        _player1._pieces[i]._used = true;
-                        used = true;
+        //             //Check if the board position value is lower than the piece
+        //             } else if (_board[std::stoi(parsed_input[1])]._val < int(parsed_input[0][0] - '0')) {
+        //                 //Place the piece
+        //                 place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), 'w');
+        //                 //Set the piece to used
+        //                 _player1._pieces[i]._used = true;
+        //                 used = true;
 
-                    } else {
-                        //Get new input
-                        std::cout << "Invalid location: choose again" << std::endl;
-                        std::cin >> user_input;
-                        std::cout << user_input << std::endl;
+        //             } else {
+        //                 //Get new input
+        //                 std::cout << "Invalid location: choose again" << std::endl;
+        //                 std::cin >> user_input;
+        //                 std::cout << user_input << std::endl;
 
-                        //Parse the new user input
-                        parse_input(user_input, parsed_input);
+        //                 //Parse the new user input
+        //                 parse_input(user_input, parsed_input);
         
-                        //Reset counter
-                        i = -1;
-                    }
+        //                 //Reset counter
+        //                 i = -1;
+        //             }
 
-                } 
+        //         } 
 
-                //Increment the piece
-                i++;
+        //         //Increment the piece
+        //         i++;
 
-                if (i > _player1._pieces.size()) {
-                    //Get new input
-                    std::cout << "Invalid piece: choose again" << std::endl;
-                    std::cin >> user_input;
-                    std::cout << user_input << std::endl;
+        //         if (i > _player1._pieces.size()) {
+        //             //Get new input
+        //             std::cout << "Invalid piece: choose again" << std::endl;
+        //             std::cin >> user_input;
+        //             std::cout << user_input << std::endl;
 
-                    //Parse the new user input
-                    parse_input(user_input, parsed_input);
+        //             //Parse the new user input
+        //             parse_input(user_input, parsed_input);
 
-                    //Reset counter
-                    i = 0;
-                }
+        //             //Reset counter
+        //             i = 0;
+        //         }
                 
-            }
+        //     }
 
-        } else {
-            //Output error
-            std::cout << "Error" << std::endl;
-        }
+        // } else {
+        //     //Output error
+        //     std::cout << "Error" << std::endl;
+        // }
 
     } else {
 
         move(1, user_input, parsed_input, 'b');
 
-        //Check if the spot is between 0-8
-        if ((std::stoi(parsed_input[1]) < 9) && (std::stoi(parsed_input[1]) >= 0)) {
-            //Check if the entity has been used and exists
-            int i = 0;
-            bool used = false;
+    //     //Check if the spot is between 0-8
+    //     if ((std::stoi(parsed_input[1]) < 9) && (std::stoi(parsed_input[1]) >= 0)) {
+    //         //Check if the entity has been used and exists
+    //         int i = 0;
+    //         bool used = false;
 
-            //Loop to check if one of the piece is available
-            while (!used) {
-                //Check the piece is correct
-                if ((_player2._pieces[i]._val == ((parsed_input[0][0]) - '0')) && (!_player2._pieces[i]._used)) {
-                    //Check if the spot on the board is available
-                    if (_board[std::stoi(parsed_input[1])]._used == false) {
-                        //Place the piece
-                        place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), 'b');
+    //         //Loop to check if one of the piece is available
+    //         while (!used) {
+    //             //Check the piece is correct
+    //             if ((_player2._pieces[i]._val == ((parsed_input[0][0]) - '0')) && (!_player2._pieces[i]._used)) {
+    //                 //Check if the spot on the board is available
+    //                 if (_board[std::stoi(parsed_input[1])]._used == false) {
+    //                     //Place the piece
+    //                     place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), 'b');
 
-                        //Set the piece to used
-                        _player2._pieces[i]._used = true;
-                        _board[std::stoi(parsed_input[1])]._used = true;
-                        used = true;
+    //                     //Set the piece to used
+    //                     _player2._pieces[i]._used = true;
+    //                     _board[std::stoi(parsed_input[1])]._used = true;
+    //                     used = true;
 
-                    //Check if the board position value is lower than the piece
-                    } else if (_board[std::stoi(parsed_input[1])]._val < int(parsed_input[0][0] - '0')) {
-                        //Place the piece
-                        place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), 'b');
+    //                 //Check if the board position value is lower than the piece
+    //                 } else if (_board[std::stoi(parsed_input[1])]._val < int(parsed_input[0][0] - '0')) {
+    //                     //Place the piece
+    //                     place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), 'b');
 
-                        //Set the piece to used
-                        _player2._pieces[i]._used = true;
-                        used = true;
+    //                     //Set the piece to used
+    //                     _player2._pieces[i]._used = true;
+    //                     used = true;
 
-                    } else {
-                        //Get new input
-                        std::cout << "Invalid location: choose again" << std::endl;
-                        std::cin >> user_input;
-                        std::cout << user_input << std::endl; 
+    //                 } else {
+    //                     //Get new input
+    //                     std::cout << "Invalid location: choose again" << std::endl;
+    //                     std::cin >> user_input;
+    //                     std::cout << user_input << std::endl; 
 
-                        //Parse the new user input
-                        parse_input(user_input, parsed_input);
+    //                     //Parse the new user input
+    //                     parse_input(user_input, parsed_input);
         
-                        //Reset counter
-                        i = -1;
-                    }
+    //                     //Reset counter
+    //                     i = -1;
+    //                 }
 
-                }
+    //             }
 
-                //Increment the piece
-                i++;
+    //             //Increment the piece
+    //             i++;
 
-                //Check if the we have loop through all the pieces
-                if (i > _player2._pieces.size()) {
-                    //Get new input
-                    std::cout << "Invalid piece: choose again" << std::endl;
-                    std::cin >> user_input;
-                    std::cout << user_input << std::endl;
+    //             //Check if the we have loop through all the pieces
+    //             if (i > _player2._pieces.size()) {
+    //                 //Get new input
+    //                 std::cout << "Invalid piece: choose again" << std::endl;
+    //                 std::cin >> user_input;
+    //                 std::cout << user_input << std::endl;
 
-                    //Parse the new user input
-                    parse_input(user_input, parsed_input);
+    //                 //Parse the new user input
+    //                 parse_input(user_input, parsed_input);
     
-                    //Reset counter
-                    i = 0;
-                }
-            }
+    //                 //Reset counter
+    //                 i = 0;
+    //             }
+    //         }
 
-        } else {
-            //Output error
-            std::cout << "Error" << std::endl;
-        }
+    //     } else {
+    //         //Output error
+    //         std::cout << "Error" << std::endl;
+    //     }
     }
 
     return;
@@ -377,7 +377,7 @@ bool game::check_win(char color) {
 void game::print_board() {
 
     //Print player1 available pieces
-    _player1.print_val();
+    _players[0].print_val();
 
     //Print a bar
     for (int j = 0; j < 13; j++) {
@@ -409,7 +409,7 @@ void game::print_board() {
     std::cout << std::endl << std::endl;
 
     //Print player2 available pieces
-    _player2.print_val();
+    _players[1].print_val();
     std::cout << std::endl;
 
 
