@@ -536,7 +536,7 @@ void game::move(int num, std::string &user_input, std::vector<std::string> &pars
                     //Place the piece
                     place_piece(std::stoi(parsed_input[1]), int(parsed_input[0][0] - '0'), col);
                     //Set the piece to used
-                    _players[num]._pieces[i]._used = true;
+                    _players[num]._pieces[i]._used = true; 
                     used = true;
 
                 } else {
