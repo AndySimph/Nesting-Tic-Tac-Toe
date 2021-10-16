@@ -15,13 +15,6 @@ game::game() {
         _board[i]._char = temp_char;
     }
 
-    //Initialize each player color and entities
-    _player1._color = 'w';
-    _player1.create_entities();
-
-    _player2._color = 'b';
-    _player2.create_entities();
-
     //Init the colors
     _players[0]._color = 'w';
     _players[1]._color = 'b';
@@ -54,7 +47,6 @@ void game::player_move(char player) {
     
     //If statement to decide which player turn it is and call move function
     if (player == 'w') {
-
         move(0, user_input, parsed_input, 'w');
 
     } else {
