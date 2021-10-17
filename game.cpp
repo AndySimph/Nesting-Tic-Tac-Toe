@@ -47,10 +47,10 @@ void game::player_move(char player) {
     
     //If statement to decide which player turn it is and call move function
     if (player == 'w') {
-        move(0, user_input, parsed_input, 'w');
+        move_logic(0, user_input, parsed_input, 'w');
 
     } else {
-        move(1, user_input, parsed_input, 'b');
+        move_logic(1, user_input, parsed_input, 'b');
     }
 
     return;
@@ -367,7 +367,7 @@ void game::print_board() {
 };
 
 //Area to test new player array
-void game::move(int num, std::string &user_input, std::vector<std::string> &parsed_input, char col) {
+void game::move_logic(int num, std::string &user_input, std::vector<std::string> &parsed_input, char col) {
 
     //Check if the spot is between 0-8
     if ((std::stoi(parsed_input[1]) < 9) && (std::stoi(parsed_input[1]) >= 0)) {

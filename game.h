@@ -22,16 +22,13 @@ class game {
         void player_move(char player);
         void parse_input(std::string user_input, std::vector<std::string> &parsed_input);
         void place_piece(int loc, int val, char color);
-        void move(int num, std::string &user_input, std::vector<std::string> &parsed_input, char col);
+        void move_logic(int num, std::string &user_input, std::vector<std::string> &parsed_input, char col);
         bool check_win(char color);
         void print_board(); 
 
         //Variables
         board_ent _board[9];   //For board
-
-        player _player1;    //For players
-        player _player2;
-        player _players[2];
+        player _players[2];    //For players
 
     private:
 
