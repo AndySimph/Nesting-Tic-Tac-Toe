@@ -9,11 +9,11 @@ void game_loop(game & Game, int &turn) {
     //Do player move
     if ((turn % 2) == 1) {
         //player1 turn
-        Game.player_move(Game._player1._color);
+        Game.player_move(Game._players[0]._color);
 
     } else {
         //player2 turn
-        Game.player_move(Game._player2._color);
+        Game.player_move(Game._players[1]._color);
 
     }
 
