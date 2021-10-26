@@ -60,6 +60,7 @@ int main() {
         }
     }
 
+    //Output the winner based on the winner var
     if (winner == 'w') {
         std::cout << "Winner is player 1!" << std::endl;
     } else {
